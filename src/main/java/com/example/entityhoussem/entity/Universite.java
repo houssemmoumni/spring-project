@@ -13,5 +13,29 @@ public class Universite {
     private long idUniversite;
     private String nomUniversite;
     private long AdresseUniversite;
+
+    public long getIdUniversite() {
+        return idUniversite;
+    }
+
+    public String getNomUniversite() {
+        return nomUniversite;
+    }
+
+    public long getAdresseUniversite() {
+        return AdresseUniversite;
+    }
+
+    public void setIdUniversite(long idUniversite) {
+        this.idUniversite = idUniversite;
+    }
+
+    public void setNomUniversite(String nomUniversite) {
+        this.nomUniversite = nomUniversite;
+    }
+
+    public void setAdresseUniversite(long adresseUniversite) {
+        AdresseUniversite = adresseUniversite;
+    }
 }
 
