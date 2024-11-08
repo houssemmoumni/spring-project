@@ -1,26 +1,21 @@
 package com.example.entityhoussem.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-
-import java.io.Serializable;
+import jakarta.persistence.*;
 
 @Entity
-public class Foyer implements Serializable {
-
+public class Foyer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idFoyer;  // Note: Variable name convention should be 'idFoyer'
+    private Long idFoyer;
     private String nomFoyer;
     private Long capa;
 
-    // Default constructor
-    public Foyer() {
-    }
+    @OneToOne(mappedBy = "foyer") // Bidirectional mapping
+    private Universite universite;
 
-    // Getters and Setters
+    // Constructors, getters, and setters
+    public Foyer() {}
+
     public Long getIdFoyer() {
         return idFoyer;
     }
@@ -43,5 +38,13 @@ public class Foyer implements Serializable {
 
     public void setCapa(Long capa) {
         this.capa = capa;
+    }
+
+    public Universite getUniversite() {
+        return universite;
+    }
+
+    public void setUniversite(Universite universite) {
+        this.universite = universite;
     }
 }
