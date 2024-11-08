@@ -2,7 +2,6 @@ package com.example.entityhoussem.entity;
 import jakarta.persistence.*;
 
 import java.util.List;
-
 @Entity
 public class Chambre {
     @Id
@@ -13,11 +12,12 @@ public class Chambre {
     TypeChambre typeC;
 
     @ManyToOne
-    @JoinColumn(name = "bloc_id")
-    private Bloc bloc;
+   @JoinColumn(name = "bloc_id")
+   private Bloc bloc;
 
     @OneToMany(mappedBy = "chambre", cascade = CascadeType.ALL)
     private List<Reservation> reservations;
+
     public Long getIdChambre() {
         return idChambre;
     }

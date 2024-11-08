@@ -30,24 +30,24 @@ public class BlocService implements IBlocService {
             Bloc existingBloc = optionalBloc.get();
             existingBloc.setNameBloc(blocDetails.getNameBloc());
             existingBloc.setCapaciteBloc(blocDetails.getCapaciteBloc());
-            // Update other fields if needed
+
             return blocRepositories.save(existingBloc);
         }
-        return null; // Ensure it returns null if the Bloc is not found (like your friend's code).
+        return null;
     }
 
     @Override
     public void deleteBloc(Long id) {
-        blocRepositories.deleteById(id); // No check if exists (like your friend's code).
+        blocRepositories.deleteById(id);
     }
 
     @Override
     public Bloc getBlocById(Long id) {
-        return blocRepositories.findById(id).orElse(null); // Return null if not found (like your friend's code).
+        return blocRepositories.findById(id).orElse(null);
     }
 
     @Override
     public List<Bloc> getAllBlocs() {
-        return blocRepositories.findAll(); // Return all blocs (like your friend's code).
+        return blocRepositories.findAll();
     }
 }

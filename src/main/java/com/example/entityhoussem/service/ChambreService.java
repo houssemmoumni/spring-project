@@ -26,7 +26,7 @@ public class ChambreService implements IChambreService {
         Optional<Chambre> optionalChambre = chambreRepositories.findById(id);
         if (optionalChambre.isPresent()) {
             Chambre existingChambre = optionalChambre.get();
-            existingChambre.setNumeroChambre(chambreDetails.getNumeroChambre());
+           existingChambre.setNumeroChambre(chambreDetails.getNumeroChambre());
             existingChambre.setTypeC(chambreDetails.getTypeC());
             // Update other fields if needed
             return chambreRepositories.save(existingChambre);
